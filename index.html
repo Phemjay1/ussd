@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>USSD code</title>
+  <p>this is my USSD CODE</p>
+</head>
+
+<body>
+  <script>
+     const USSD= 777
+     const password=1234
+     var code= prompt('enter your bank code')
+     if(code ==`*${USSD}#`)
+   {
+      alert('you are welcome to FCMB, kindly note that N9.65 will be deducted from your account')
+      
+      if(!Number.isNaN(code))
+      {
+      var choose= prompt(`choose your choice transaction below..
+      1. Data self
+      2. Airtime others
+      3. Airtime self
+      4. Transfer`);
+      if(choose==1) //Data self
+     { 
+      var select=prompt(`select data bundle
+      1. 75MB for 1day @ N100
+      2. 200MB 2days @ N200
+      3. 1.5GB 30days @ N1000`)
+      if(select==1){
+      var pin=prompt('enter your pin')
+      if (pin==`${password}`)
+      alert('subscription of N100 successful')}
+      
+      else if (select==2){
+     
+      var pin=prompt('enter your pin')
+      if (pin==`${password}`)
+      alert('subscription of N200 successful')
+       }
+      
+      else if(select==3)
+      {
+      var pin=prompt('enter your pin')
+      if (pin==`${password}`)
+      alert('subscription of N1000 successful')
+         
+      }
+      else{
+         alert('try again')
+      }
+     }
+     //End of data self
+     
+     
+     if(choose==2)//Airtime for others
+     {
+     var network=prompt(`choose network below:-
+     1. MTN
+     2. Airtel
+     3. Glo`)
+     if(network==1)//MTN network
+     {
+        var p_number=prompt(`enter the friend's phone number`);
+        if(!isNaN(p_number))
+        {
+           var amount=prompt('enter amount')
+        } if (!isNaN(amount)){
+           var pin=prompt('enter your password')
+        } else {alert('invalid amount')}
+        if(pin==`${password}`){
+           alert('transaction succesful ✅')
+        }else{alert('invalid password')}
+     }
+     if(network==2) //Airtel network
+     {
+        var p_number=prompt(`enter the friend's phone number`);
+        if(!isNaN(p_number))
+        {
+        var amount=prompt('enter amount')
+        } if (!isNaN(amount)){
+        var pin=prompt('enter your password')
+        } else {alert('invalid amount')}
+        if(pin==`${password}`){
+        alert('transaction succesful ✅')
+        }else{alert('invalid password')}
+     }//end of Airtel network
+     
+        if(network==3) //glo network
+        {var p_number=prompt(`enter the friend's phone number`);
+           if(!isNaN(p_number))
+           {
+           var amount=prompt('enter amount')
+           } if (!isNaN(amount)){
+           var pin=prompt('enter your password')
+           } else {alert('invalid amount')}
+           if(pin==`${password}`){
+           alert('transaction succesful ✅')
+           }else{alert('invalid password')}
+           
+        }
+     }//End of Data for others
+    if (choose==3) //Airtime self
+    {
+     alert('you are about to make airtime transaction for yourself')
+     var amo_unt=prompt('enter amount') 
+     if(!isNaN(amo_unt))
+     var code=prompt('enter your password')
+     if(code==`${password}`){
+     alert('Your transaction is successful')}
+    
+    else {alert('wrong input')}//End of Airtime for self
+    }
+    if (choose==4) //Transfer
+    {
+       alert('you are about to make transfer transaction to others,kindly click Ok below to continue...')
+       var acc_no=prompt('enter the recipient account number')
+       if(!isNaN(acc_no))
+       {
+          var bank_name=prompt('enter the recipient bank name')
+          if(isNaN(bank_name)) 
+          { 
+             var amount=prompt('enter amount')
+             if(!isNaN(amount))
+             {var code=prompt('enter your password')
+                if(code==`${password}`)alert('your transaction is successful')
+              else {alert('incorrect password..try again with correct password 🤣phemjay🤣')}}
+          
+          else {alert('wrong input')}}
+       else {alert('only number is required')}}
+    }
+    else{alert('try again later')}
+     }
+     
+     else{
+     alert('wrong input')
+     }
+
+     
+   }
+   else
+   {
+      alert('❌❌❌ wrong input, please! insert a correct bank code ')
+   }
+  </script>
+</body>
+</html>
